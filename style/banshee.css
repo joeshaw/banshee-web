@@ -1,0 +1,98 @@
+/* Banshee Media Center Stylesheet */
+
+body {
+	background-color: #eee;
+	font-family: Myriad, "Myriad Pro", Segoe, Sans-Serif;
+}
+
+h1,h2,h3 {
+	color: #888;
+}
+
+#maincontainer {
+	max-width: 60em;
+	margin: 0px auto;
+	position: relative;
+}
+
+#title {
+	display: block;
+	width: 200px;
+	height: 80px;
+	padding: 0px;
+	background: transparent url("../images/title.png") no-repeat top left;
+	overflow: hidden;
+	text-indent: -2000em; /* hide text, only show background image for CSS browsers */
+}
+
+#menu {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background-color: #eee;
+}
+
+#menu li {
+	list-style: none;
+	display: block;
+	float: left;
+	margin-right: 1em;
+}
+
+#browser {
+	position: relative;
+	min-height: 200px;
+}
+
+#artists_container {
+	position: absolute;
+	width: 48%;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	left: 0px;
+}
+
+#albums_container {
+	position: absolute;
+	width: 48%;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+	right: 0px;
+}
+
+#albums_container h2, #artists_container h2 {
+	margin: 4px;
+	font-size: 110%;
+}
+
+#albums_container select, #artists_container select {
+	margin: 4px;
+	border: 1px solid #888;
+	width: 100%;
+	min-height: 10em;
+}
+
+#table_container {
+	width: 100%;
+	margin-top: 1em;
+}
+
+#track_table {
+	width: 100%;
+	background-color: white;
+	border: 1px solid #888;
+	-moz-border-radius: 3px;
+	padding: .5em;
+	font-size: 90%;
+}
+
+#track_table th {
+	text-align: left;
+	color: #888;
+}
+
+#track_table thead {
+	margin-bottom: 0.5em;
+}
