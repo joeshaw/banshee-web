@@ -37,8 +37,6 @@ function populateTable (table, array) {
 }
 
 function loadArtists () {
-	$("#artist_list").hide();
-	
 	$.getJSON("artists.json", function(json) {
 		var artist_list = $("#artist_list");
 		
@@ -47,11 +45,6 @@ function loadArtists () {
 		artist_list.change(function() {
 			loadAlbums();
 		});
-
-		// Show up to 20 items
-		artist_list.attr("size", count >= 20 ? 20 : count);
-		
-		artist_list.show();
 	});
 }
 

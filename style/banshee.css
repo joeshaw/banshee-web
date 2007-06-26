@@ -71,7 +71,7 @@ h1,h2,h3 {
 	margin: 4px;
 	border: 1px solid #888;
 	width: 100%;
-	min-height: 10em;
+	height: 10em;
 }
 
 #table_container {
