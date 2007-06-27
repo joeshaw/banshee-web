@@ -19,7 +19,7 @@ function populateTable (table, array) {
 	tbody.empty();
 
 	function generateTableItem (array, i, field) {
-		return '<td>'+ array[i][field] + '</td>';
+		return '<td id="' + field + array[i]["id"] + '">'+ array[i][field] + '</td>';
 	}
 
 	for (var i = 0; i < array.length; i++) {
@@ -50,8 +50,18 @@ function play(id, href) {
 	});
 	currently_playing = id;
 	
-	$("tr#" + id + " td.playing").empty().append("playing");
-	
+	var row = $("tr#" + id);
+	var output = "Now playing: "
+		+ $("td#name" + id, row).html()
+		+ " ("
+		+ $("td#artist" + id, row).html()
+		+ " - "
+		+ $("td#album" + id, row).html()
+		+ ")";
+		
+	$("#now_playing").empty().append(output);
+	$("td.playing", row).empty().append("playing");
+
 	soundManager.play (currently_playing);
 }
 
@@ -59,6 +69,7 @@ function stop() {
 	if (currently_playing != null) {
 		soundManager.destroySound (currently_playing);
 		$("tr#" + currently_playing + " td.playing").empty();
+		$("#now_playing").empty();
 		currently_playing = null;
 	}
 }
