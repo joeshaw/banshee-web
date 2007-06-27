@@ -44,10 +44,15 @@ function play(id, href) {
 	soundManager.createSound ({
 		id: id,
 		url: href,
+		onfinish: function() {
+			stop();
+			$("tr#" + this.sID).next().click();
+		}
 	});
 	currently_playing = id;
 	
 	$("tr#" + id + " td.playing").empty().append("playing");
+	
 	soundManager.play (currently_playing);
 }
 
