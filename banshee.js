@@ -81,6 +81,9 @@ function loadTracks () {
 	
 	$.getJSON("tracks.json", {"albums" : albums}, function(json) {
 		populateTable($("#track_table"), json);
+		$("#track_table").tableSorter({
+			sortColumn: "Artist"
+		});
 		$("#table_container").fadeIn("slow");
 	});
 }
@@ -102,6 +105,6 @@ function printSelected () {
 $(document).ready(function() {
 	$("h1#title").fadeIn("slow"); // unnecessary bling :)
 	$("#flash_player").hide();	
-	$("#table_container").hide();	
+	$("#table_container").hide();
 	loadArtists();
 })
