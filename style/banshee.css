@@ -133,6 +133,6 @@ a:hover {
 	color: #729fcf;
 }
 
-.fakelink {
+#track_table tr {
 	cursor: pointer;
 }

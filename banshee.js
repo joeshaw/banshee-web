@@ -37,7 +37,7 @@ function populateTable (table, array) {
 	$("tbody tr").hover(function() {
 		$(this).addClass("fakelink");
 	}, function() {
-		$(this).addClass("fakelink");
+		$(this).removeClass("fakelink");
 	});
 }
 
