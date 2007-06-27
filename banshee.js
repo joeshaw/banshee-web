@@ -24,11 +24,7 @@ function populateTable (table, array) {
 	}
 
 	for (var i = 0; i < array.length; i++) {
-		var entry = '<tr id="' + array[i]["id"] + '"'
-		if (!(i % 2)) {
-			entry += ' class="oddrow"';
-		}
-		entry	+= '>'
+		var entry = '<tr id="' + array[i]["id"] + '">'
 			+ generateTableItem (array, i, "number")
 			+ generateTableItem (array, i, "name")
 			+ generateTableItem (array, i, "length")
@@ -37,7 +33,12 @@ function populateTable (table, array) {
 			+ "</tr>";
 		tbody.append(entry);
 	}
+	
+	$("tr:odd", tbody).addClass("oddrow");
 }
+
+// The global flash object
+var s = null;
 
 function loadFile(href) {
 	if (s == null) {
@@ -80,8 +81,8 @@ function loadTracks () {
 	
 	$.getJSON("tracks.json", {"albums" : albums}, function(json) {
 		populateTable($("#track_table"), json);
+		$("#table_container").fadeIn("slow");
 	});
-	$("#table_container").fadeIn("slow");
 }
 
 function getSelected (select) {
@@ -98,15 +99,8 @@ function printSelected () {
 	alert("Artists: " + artists + "\n" + "Albums: " + albums);
 }
 
-function bling () {
-	//$("body").fadeIn("slow");
-	$("h1#title").fadeIn("slow");
-}
-
-var s;
-
 $(document).ready(function() {
-	bling(); // unnecessary bling :)
+	$("h1#title").fadeIn("slow"); // unnecessary bling :)
 	$("#flash_player").hide();	
 	$("#table_container").hide();	
 	loadArtists();
