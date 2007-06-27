@@ -47,7 +47,7 @@ function play(id, href) {
 	});
 	currently_playing = id;
 	
-	$("tr#" + id + " td.playing").append("playing");
+	$("tr#" + id + " td.playing").empty().append("playing");
 	soundManager.play (currently_playing);
 }
 
@@ -57,6 +57,21 @@ function stop() {
 		$("tr#" + currently_playing + " td.playing").empty();
 		currently_playing = null;
 	}
+}
+
+function pause() {
+	if (currently_playing == null)
+		return;
+		
+	soundManager.togglePause (currently_playing);
+	
+	var state;
+	if (soundManager.sounds[currently_playing].paused)
+		state = "paused";
+	else
+		state = "playing";
+		
+	$("tr#" + currently_playing + " td.playing").empty ().append(state);
 }
 
 function loadArtists () {
