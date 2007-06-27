@@ -24,14 +24,17 @@ function populateTable (table, array) {
 	}
 
 	for (var i = 0; i < array.length; i++) {
-		var entry = '<tr id="' + array[i]["id"] + '">'
+		var entry = '<tr id="' + array[i]["id"] + '" '
+		if (!(i % 2)) {
+			entry += ' class="oddrow"';
+		}
+		entry	+= '>'
 			+ generateTableItem (array, i, "number")
 			+ generateTableItem (array, i, "name")
 			+ generateTableItem (array, i, "length")
 			+ generateTableItem (array, i, "artist")
 			+ generateTableItem (array, i, "album")
 			+ "</tr>";
-
 		tbody.append(entry);
 	}
 }
@@ -78,6 +81,7 @@ function loadTracks () {
 	$.getJSON("tracks.json", {"albums" : albums}, function(json) {
 		populateTable($("#track_table"), json);
 	});
+	$("#table_container").fadeIn("slow");
 }
 
 function getSelected (select) {
@@ -94,9 +98,16 @@ function printSelected () {
 	alert("Artists: " + artists + "\n" + "Albums: " + albums);
 }
 
+function bling () {
+	//$("body").fadeIn("slow");
+	$("h1#title").fadeIn("slow");
+}
+
 var s;
 
 $(document).ready(function() {
+	bling(); // unnecessary bling :)
 	$("#flash_player").hide();	
+	$("#table_container").hide();	
 	loadArtists();
 })

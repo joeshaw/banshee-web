@@ -9,6 +9,18 @@ h1,h2,h3 {
 	color: #888;
 }
 
+a {
+	color: #3465a4;
+}
+
+a:visited {
+	color: #729fcf;
+}
+
+a:hover {
+	color: #949fef;
+}
+
 #maincontainer {
 	max-width: 60em;
 	margin: 0px auto;
@@ -84,8 +96,9 @@ h1,h2,h3 {
 	background-color: white;
 	border: 1px solid #888;
 	-moz-border-radius: 3px;
-	padding: .5em;
+	padding: 2em;
 	font-size: 90%;
+	border-collapse: collapse;
 }
 
 #track_table th {
@@ -94,5 +107,28 @@ h1,h2,h3 {
 }
 
 #track_table thead {
-	margin-bottom: 0.5em;
+	background-color: #aaa;
+}
+
+#track_table th {
+	color: white;
+}
+
+#track_table td, #track_table th {
+	margin: 0px;
+	padding: .3em;
+}
+
+#track_table .oddrow td {
+	background-color: #eee;
+}
+
+#track_table a {
+	text-decoration: none;
+	color: black;
+}
+
+#track_table a:hover {
+	text-decoration: underline;
+	color: #729fcf;
 }
