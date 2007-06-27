@@ -24,7 +24,8 @@ function populateTable (table, array) {
 
 	for (var i = 0; i < array.length; i++) {
 		var entry = '<tr id="' + array[i]["id"]
-			+ '" onclick="loadFile(\'' + array[i]["id"] + '\', \'' + array[i]["href"] + '\')">'
+			+ '" onclick="play(\'' + array[i]["id"] + '\', \'' + array[i]["href"] + '\')">'
+			+ '<td class="playing"></td>'
 			+ generateTableItem (array, i, "number")
 			+ generateTableItem (array, i, "name")
 			+ generateTableItem (array, i, "length")
@@ -37,21 +38,23 @@ function populateTable (table, array) {
 
 var currently_playing = null;
 
-function loadFile(id, href) {
+function play(id, href) {
 	stop ();
 	
 	soundManager.createSound ({
-		id: "track" + id,
+		id: id,
 		url: href,
 	});
-	currently_playing = "track" + id;
+	currently_playing = id;
 	
+	$("tr#" + id + " td.playing").append("playing");
 	soundManager.play (currently_playing);
 }
 
 function stop() {
 	if (currently_playing != null) {
 		soundManager.destroySound (currently_playing);
+		$("tr#" + currently_playing + " td.playing").empty();
 		currently_playing = null;
 	}
 }
