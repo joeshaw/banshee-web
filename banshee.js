@@ -24,7 +24,7 @@ function populateTable (table, array) {
 	}
 
 	for (var i = 0; i < array.length; i++) {
-		var entry = '<tr id="' + array[i]["id"] + '" '
+		var entry = '<tr id="' + array[i]["id"] + '"'
 		if (!(i % 2)) {
 			entry += ' class="oddrow"';
 		}
