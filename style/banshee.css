@@ -138,9 +138,9 @@ a:hover {
 }
 
 .headerSortUp {
-	background: url('../images/arrowup.png') top right no-repeat;
+	background: url('../images/arrowdown.png') top right no-repeat;
 }
 
 .headerSortDown {
-	background: url('../images/arrowdown.png') top right no-repeat;
+	background: url('../images/arrowup.png') top right no-repeat;
 }
