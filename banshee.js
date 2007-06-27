@@ -24,7 +24,7 @@ function populateTable (table, array) {
 
 	for (var i = 0; i < array.length; i++) {
 		var entry = '<tr id="' + array[i]["id"]
-			+ '" onclick="loadFile(\'' + array[i]["href"] + '\')">'
+			+ '" onclick="loadFile(\'' + array[i]["id"] + '\', \'' + array[i]["href"] + '\')">'
 			+ generateTableItem (array, i, "number")
 			+ generateTableItem (array, i, "name")
 			+ generateTableItem (array, i, "length")
@@ -35,19 +35,25 @@ function populateTable (table, array) {
 	}
 }
 
-// The global flash object
-var s = null;
+var currently_playing = null;
 
-function loadFile(href) {
-	if (s == null) {
-		s = new SWFObject("mp3player.swf", "line", "100%", "20", "7");
-		s.addVariable("showdownload", "true");
+function loadFile(id, href) {
+	stop ();
+	
+	soundManager.createSound ({
+		id: "track" + id,
+		url: href,
+	});
+	currently_playing = "track" + id;
+	
+	soundManager.play (currently_playing);
+}
+
+function stop() {
+	if (currently_playing != null) {
+		soundManager.destroySound (currently_playing);
+		currently_playing = null;
 	}
-		
-	s.addVariable("file", href);
-	s.addVariable("autostart", "true");
-	s.write("flash_player");
-	$("#flash_player").show();
 }
 
 function loadArtists () {
@@ -111,3 +117,5 @@ $(document).ready(function() {
 	$("#table_container").hide();
 	loadArtists();
 })
+
+soundManager.debugMode = false;

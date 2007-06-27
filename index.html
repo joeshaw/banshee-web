@@ -8,8 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="style/banshee.css">
 	<script type="text/javascript" src="http://jquery.com/src/jquery-latest.js"</script>
 	<script type="text/javascript" src="jquery.tablesorter.js"></script>
+	<script type="text/javascript" src="soundmanager2.js"></script>
 	<script type="text/javascript" src="banshee.js"></script>
-	<script type="text/javascript" src="swfobject.js"></script>
 </head>
 <body>
 	<div id="maincontainer">
@@ -38,6 +38,7 @@
 
 		<div>
 			<a id="show_artist" href="#" onclick="printSelected();">Show the current selections</a>
+			<a href="#" onclick="stop();">Stop playing</a>
 		</div>
 		<div id="table_container">
 			<table id="track_table">
@@ -52,9 +53,6 @@
 				</thead>
 				<tbody></tbody>
 			</table>
-		</div>
-		<div id="flash_player">
-			<a href="http://macromedia.com/go/getflashplayer">Get the Flash Player</a> to see this player.
 		</div>
 	</div>
 </body>
