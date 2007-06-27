@@ -127,3 +127,7 @@ a:hover {
 	cursor: pointer;
 }
 
+/* hover the song rows */
+#track_table tr:hover td {
+	background-color: #ddd;
+}
