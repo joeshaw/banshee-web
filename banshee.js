@@ -19,12 +19,12 @@ function populateTable (table, array) {
 	tbody.empty();
 
 	function generateTableItem (array, i, field) {
-		return '<td><a href="#" onclick="loadFile(\''+ array[i]["href"] + '\')">' 
-			+ array[i][field] + '</a></td>';
+		return '<td>'+ array[i][field] + '</td>';
 	}
 
 	for (var i = 0; i < array.length; i++) {
-		var entry = '<tr id="' + array[i]["id"] + '">'
+		var entry = '<tr id="' + array[i]["id"]
+			+ '" onclick="loadFile(\'' + array[i]["href"] + '\')">'
 			+ generateTableItem (array, i, "number")
 			+ generateTableItem (array, i, "name")
 			+ generateTableItem (array, i, "length")
@@ -33,8 +33,14 @@ function populateTable (table, array) {
 			+ "</tr>";
 		tbody.append(entry);
 	}
-	
 	$("tr:odd", tbody).addClass("oddrow");
+	$("tbody tr").hover(function() {
+		$(this).addClass("fakelink");
+		console.log("pridavam class");
+	}, function() {
+		$(this).addClass("fakelink");
+		console.log("beru class");
+	});
 }
 
 // The global flash object
