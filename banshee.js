@@ -81,7 +81,10 @@ function loadTracks () {
 	$.getJSON("tracks.json", {"albums" : albums}, function(json) {
 		populateTable($("#track_table"), json);
 		$("#track_table").tableSorter({
-			sortColumn: "Artist"
+			sortColumn: "Artist",
+			sortClassAsc: "headerSortUp",
+			sortClassDesc: "headerSortDown",
+			headerClass: "header"
 		});
 		$("#table_container").fadeIn("slow");
 	});
