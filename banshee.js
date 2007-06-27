@@ -42,7 +42,6 @@ function loadFile(href) {
 		s.addVariable("showdownload", "true");
 	}
 		
-	alert(href);
 	s.addVariable("file", href);
 	s.addVariable("autostart", "true");
 	s.write("flash_player");
