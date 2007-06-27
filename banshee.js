@@ -19,7 +19,7 @@ function populateTable (table, array) {
 	tbody.empty();
 
 	function generateTableItem (array, i, field) {
-		return '<td><a href="' + array[i]["href"] + '" target="_blank">' 
+		return '<td><a href="#" onclick="loadFile(\''+ array[i]["href"] + '\')">' 
 			+ array[i][field] + '</a></td>';
 	}
 
@@ -34,6 +34,19 @@ function populateTable (table, array) {
 
 		tbody.append(entry);
 	}
+}
+
+function loadFile(href) {
+	if (s == null) {
+		s = new SWFObject("mp3player.swf", "line", "100%", "20", "7");
+		s.addVariable("showdownload", "true");
+	}
+		
+	alert(href);
+	s.addVariable("file", href);
+	s.addVariable("autostart", "true");
+	s.write("flash_player");
+	$("#flash_player").show();
 }
 
 function loadArtists () {
@@ -82,6 +95,9 @@ function printSelected () {
 	alert("Artists: " + artists + "\n" + "Albums: " + albums);
 }
 
+var s;
+
 $(document).ready(function() {
+	$("#flash_player").hide();	
 	loadArtists();
 })
