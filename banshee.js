@@ -33,7 +33,6 @@ function populateTable (table, array) {
 			+ "</tr>";
 		tbody.append(entry);
 	}
-	$("tr:odd", tbody).addClass("oddrow");
 }
 
 // The global flash object
@@ -84,7 +83,9 @@ function loadTracks () {
 			sortColumn: "Artist",
 			sortClassAsc: "headerSortUp",
 			sortClassDesc: "headerSortDown",
-			headerClass: "header"
+			headerClass: "header",
+			stripingRowClass: ["evenrow", "oddrow"],
+			stripeRowsOnStartup: "true"
 		});
 		$("#table_container").fadeIn("slow");
 	});
