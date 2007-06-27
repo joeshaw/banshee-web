@@ -131,3 +131,11 @@ a:hover {
 #track_table tr:hover td {
 	background-color: #ddd;
 }
+
+.headerSortUp {
+	background: url('../images/arrowup.png') top right no-repeat;
+}
+
+.headerSortDown {
+	background: url('../images/arrowdown.png') top right no-repeat;
+}
