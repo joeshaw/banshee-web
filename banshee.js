@@ -36,10 +36,8 @@ function populateTable (table, array) {
 	$("tr:odd", tbody).addClass("oddrow");
 	$("tbody tr").hover(function() {
 		$(this).addClass("fakelink");
-		console.log("pridavam class");
 	}, function() {
 		$(this).addClass("fakelink");
-		console.log("beru class");
 	});
 }
 
