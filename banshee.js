@@ -34,11 +34,6 @@ function populateTable (table, array) {
 		tbody.append(entry);
 	}
 	$("tr:odd", tbody).addClass("oddrow");
-	$("tbody tr").hover(function() {
-		$(this).addClass("fakelink");
-	}, function() {
-		$(this).removeClass("fakelink");
-	});
 }
 
 // The global flash object
