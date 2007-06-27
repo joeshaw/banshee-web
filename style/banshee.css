@@ -123,16 +123,7 @@ a:hover {
 	background-color: #eee;
 }
 
-#track_table a {
-	text-decoration: none;
-	color: black;
-}
-
-#track_table a:hover {
-	text-decoration: underline;
-	color: #729fcf;
-}
-
 #track_table tr {
 	cursor: pointer;
 }
+
