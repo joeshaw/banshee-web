@@ -120,7 +120,7 @@ function play(id, href) {
 function stop() {
 	if (currently_playing != null) {
 		soundManager.destroySound (currently_playing);
-		$("tr#" + currently_playing).removeClass("nowplaying");
+		$("tr#" + currently_playing).removeClass("nowplaying").removeClass("paused");;
 		$("#now_playing").empty();
 		$("#current_time").empty();
 		currently_playing = null;
@@ -132,6 +132,11 @@ function pause() {
 		return;
 		
 	soundManager.togglePause (currently_playing);
+	
+	if (soundManager.sounds[currently_playing].paused)
+		$("tr#" + currently_playing).removeClass("nowplaying").addClass("paused");
+	else
+		$("tr#" + currently_playing).removeClass("paused").addClass("nowplaying");
 }
 
 function next() {
