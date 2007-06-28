@@ -87,9 +87,6 @@ function formatTime(ms) {
 
 var currently_playing = null;
 
-const playing_img = '<img alt="" width="16" height="16" src="images/nowplaying.png">';
-const paused_img = '<img alt="" width="16" height="16" src="images/paused.png">';
-
 function play(id, href) {
 	stop ();
 	
@@ -115,11 +112,7 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
-<<<<<<< HEAD:banshee.js
-	$("td.playing", row).empty().append(playing_img);
-=======
 	$(row).addClass("nowplaying");
->>>>>>> 30fa59e7cf9a9beea3c53540d19e5744071d20b0:banshee.js
 
 	soundManager.play (currently_playing);
 }
@@ -139,9 +132,6 @@ function pause() {
 		return;
 		
 	soundManager.togglePause (currently_playing);
-	
-	$("tr#" + currently_playing + " td.playing").empty ()
-		.append(soundManager.sounds[currently_playing].paused ? paused_img : playing_img);
 }
 
 function next() {
