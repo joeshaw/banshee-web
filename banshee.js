@@ -111,8 +111,8 @@ function play(id, href) {
 		+ $("td#album" + id, row).html()
 		+ ")";
 		
-	$("#now_playing").empty().append(output);
-	row.addClass("nowplaying");
+	$("#now_playing").empty().append(output).fadeIn();
+	$row.addClass("nowplaying");
 
 	soundManager.play (currently_playing);
 }

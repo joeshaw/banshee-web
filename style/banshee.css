@@ -144,9 +144,6 @@ a:hover {
 	background: url('../images/arrowup.png') top right no-repeat;
 }
 
-#player_controls {
-	margin: 1em;
-}
 
 td.playing {
 	width: 32px;
@@ -157,3 +154,43 @@ td.playing {
 tr.nowplaying td.playing {
 	background: url('../images/nowplaying.png') no-repeat center;
 }
+
+tr.paused td.playing {
+	background: url('../images/paused.png') no-repeat center;
+}
+
+#nowplaying_label {
+	clear: both;
+	height: 1.5em; /* make sure it doesn't need to reflow when it gets content */
+	margin-top: 1em;
+}
+
+#player_controls {
+	height: 32px;
+}
+
+#player_controls a {
+	display: block;
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin: 4px;
+	text-indent: -100em;
+}
+
+#prev_button {
+	background: url('../images/previous.png') no-repeat center;
+}
+
+#next_button {
+	background: url('../images/next.png') no-repeat center;
+}
+
+#pause_button {
+	background: url('../images/pause.png') no-repeat center;
+}
+
+#stop_button {
+	background: url('../images/stop.png') no-repeat center;
+}
+
