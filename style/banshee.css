@@ -195,5 +195,5 @@ tr.paused td.playing {
 }
 
 .play { /* override the pause button to showplay, when paused */
-	background: url('../images/pause.png') no-repeat center !important;
+	background: url('../images/play.png') no-repeat center !important;
 }

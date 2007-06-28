@@ -137,10 +137,13 @@ function pause() {
 		
 	soundManager.togglePause (currently_playing);
 	
-	if (soundManager.sounds[currently_playing].paused)
+	if (soundManager.sounds[currently_playing].paused) {
 		$("tr#" + currently_playing).removeClass("nowplaying").addClass("paused");
-	else
+		$("#pause_button").addClass("play");
+	} else {
 		$("tr#" + currently_playing).removeClass("paused").addClass("nowplaying");
+		$("#pause_button").removeClass("play");
+	}
 }
 
 function next() {
