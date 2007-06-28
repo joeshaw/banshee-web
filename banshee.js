@@ -56,6 +56,33 @@ function printSelected () {
 }
 
 ///////////////////////////////////////
+
+function formatTime(ms) {
+	var hours, minutes, seconds;
+	
+	hours = parseInt(ms / (1000*60*60));
+	ms = ms % (1000*60*60);
+	
+	minutes = parseInt(ms / (1000*60));
+	ms = ms % (1000*60);
+	
+	seconds = parseInt(ms / 1000);
+	
+	output = "";
+	if (hours > 0)
+		output += hours + ":";
+		
+	output += minutes + ":";
+	
+	if (seconds < 10)
+		output += "0";
+		
+	output += seconds;
+
+	return output;
+}
+
+///////////////////////////////////////
 // Audio playback functions
 
 var currently_playing = null;
@@ -68,6 +95,9 @@ function play(id, href) {
 		url: href,
 		onfinish: function() {
 			next();
+		},
+		whileplaying: function() {
+			$("#current_time").empty().append(formatTime(this.position) + " of " + formatTime(this.durationEstimate));
 		}
 	});
 	currently_playing = id;
@@ -92,6 +122,7 @@ function stop() {
 		soundManager.destroySound (currently_playing);
 		$("tr#" + currently_playing + " td.playing").empty();
 		$("#now_playing").empty();
+		$("#current_time").empty();
 		currently_playing = null;
 	}
 }
@@ -123,7 +154,9 @@ function prev() {
 	
 	stop();
 	
-	if (pos <= 3000)
+	// 2 seconds is the threshold at which we repeat the current song rather
+	// than going to the previous track.
+	if (pos <= 2000)
 		$("tr#" + current_id).prev().click();
 	else
 		$("tr#" + current_id).click();
