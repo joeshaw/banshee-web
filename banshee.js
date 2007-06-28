@@ -112,7 +112,7 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
-	$("td.playing", row).empty().append("<img alt=\"\" width=\"16\" height=\"16\" src=\"images/nowplaying.png\">");
+	$(row).addClass("nowplaying");
 
 	soundManager.play (currently_playing);
 }
@@ -120,7 +120,7 @@ function play(id, href) {
 function stop() {
 	if (currently_playing != null) {
 		soundManager.destroySound (currently_playing);
-		$("tr#" + currently_playing + " td.playing").empty();
+		$("tr#" + currently_playing).removeClass("nowplaying");
 		$("#now_playing").empty();
 		$("#current_time").empty();
 		currently_playing = null;
