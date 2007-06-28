@@ -87,6 +87,9 @@ function formatTime(ms) {
 
 var currently_playing = null;
 
+const playing_img = '<img alt="" width="16" height="16" src="images/nowplaying.png">';
+const paused_img = '<img alt="" width="16" height="16" src="images/paused.png">';
+
 function play(id, href) {
 	stop ();
 	
@@ -112,7 +115,7 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
-	$("td.playing", row).empty().append("<img alt=\"\" width=\"16\" height=\"16\" src=\"images/nowplaying.png\">");
+	$("td.playing", row).empty().append(playing_img);
 
 	soundManager.play (currently_playing);
 }
@@ -133,13 +136,8 @@ function pause() {
 		
 	soundManager.togglePause (currently_playing);
 	
-	var state;
-	if (soundManager.sounds[currently_playing].paused)
-		state = "paused";
-	else
-		state = "playing";
-		
-	$("tr#" + currently_playing + " td.playing").empty ().append(state);
+	$("tr#" + currently_playing + " td.playing").empty ()
+		.append(soundManager.sounds[currently_playing].paused ? paused_img : playing_img);
 }
 
 function next() {
