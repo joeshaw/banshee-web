@@ -40,10 +40,10 @@
 			<a id="show_artist" href="#" onclick="printSelected();">Show the current selections</a>
 		</div>
 		<div id="player_controls">
-			<a href="#" onclick="prev();">Prev</a>
-			<a href="#" onclick="pause();">Pause</a>
-			<a href="#" onclick="stop();">Stop</a>
-			<a href="#" onclick="next();">Next</a>
+			<a href="#" id="prev_button" onclick="prev();">Prev</a>
+			<a href="#" id="pause_button" onclick="pause();">Pause</a>
+			<a href="#" id="stop_button" onclick="stop();">Stop</a>
+			<a href="#" id="next_button" onclick="next();">Next</a>
 		</div>
 		<div id="now_playing">
 		</div>
@@ -51,7 +51,7 @@
 			<table id="track_table">
 				<thead>
 					<tr>
-						<th class="header">Playing</th>
+						<th class="header">&nbsp;</th>
 						<th class="header">#</th>
 						<th class="header">Name</th>
 						<th class="header">Time</th>
