@@ -153,3 +153,7 @@ td.playing {
 	height: 32px;
 	overflow: hidden;
 }
+
+tr.nowplaying td.playing {
+	background: url('../images/nowplaying.png') no-repeat center;
+}

@@ -115,7 +115,11 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
+<<<<<<< HEAD:banshee.js
 	$("td.playing", row).empty().append(playing_img);
+=======
+	$(row).addClass("nowplaying");
+>>>>>>> 30fa59e7cf9a9beea3c53540d19e5744071d20b0:banshee.js
 
 	soundManager.play (currently_playing);
 }
@@ -123,7 +127,7 @@ function play(id, href) {
 function stop() {
 	if (currently_playing != null) {
 		soundManager.destroySound (currently_playing);
-		$("tr#" + currently_playing + " td.playing").empty();
+		$("tr#" + currently_playing).removeClass("nowplaying");
 		$("#now_playing").empty();
 		$("#current_time").empty();
 		currently_playing = null;
