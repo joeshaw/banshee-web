@@ -90,9 +90,11 @@ function formatTime(ms) {
 var currently_playing = null;
 
 function playOrPause() {
+	// If we're already playing something, just toggle the pause button
 	if (currently_playing != null)
-		return pause();
+		return togglePause();
 
+	// Otherwise, just start playing the first item in the track list
 	$("#track_table tbody tr:first").click();
 }
 
@@ -144,7 +146,7 @@ function stop() {
 	}
 }
 
-function pause() {
+function togglePause() {
 	if (currently_playing == null)
 		return;
 		
@@ -164,8 +166,13 @@ function next() {
 		return;
 	
 	var current_id = currently_playing;
+	var paused = soundManager.sounds[current_id].paused;
 	stop();
 	$("tr#" + current_id).next().click();
+	
+	// If we were paused, stay that way.
+	if (paused)
+		togglePause();
 }
 
 function prev() {
@@ -173,7 +180,8 @@ function prev() {
 		return;
 	
 	var current_id = currently_playing;
-	var pos = soundManager.sounds[currently_playing].position;
+	var paused = soundManager.sounds[current_id].paused;
+	var pos = soundManager.sounds[current_id].position;
 	
 	stop();
 	
@@ -183,6 +191,10 @@ function prev() {
 		$("tr#" + current_id).prev().click();
 	else
 		$("tr#" + current_id).click();
+	
+	// If we were paused, stay that way.
+	if (paused)
+		togglePause();
 }
 
 ///////////////////////////////////////
