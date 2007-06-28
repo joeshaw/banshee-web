@@ -37,15 +37,17 @@
 		</div>
 
 		<div>
-			<a id="show_artist" href="#" onclick="printSelected();">Show the current selections</a>
+			<a id="show_artist" onclick="printSelected();">Show the current selections</a>
 		</div>
 		<div id="player_controls">
-			<a href="#" id="prev_button" onclick="prev();">Prev</a>
-			<a href="#" id="pause_button" onclick="pause();">Pause</a>
-			<a href="#" id="stop_button" onclick="stop();">Stop</a>
-			<a href="#" id="next_button" onclick="next();">Next</a>
+			<a id="prev_button" onclick="prev();">Prev</a>
+			<a id="pause_button" onclick="pause();">Pause</a>
+			<a id="stop_button" onclick="stop();">Stop</a>
+			<a id="next_button" onclick="next();">Next</a>
 		</div>
-		<div id="now_playing">
+		<div>
+			<span id="now_playing"></span>
+			<span id="current_time"></span>
 		</div>
 		<div id="table_container">
 			<table id="track_table">
