@@ -1,3 +1,5 @@
+// Functions for populating <select> and <table> tags
+
 function populateSelect (select, array) {
 	select.empty();
 	select.unbind("change");
@@ -35,6 +37,26 @@ function populateTable (table, array) {
 		tbody.append(entry);
 	}
 }
+
+///////////////////////////////////////
+// Functions to get the currently selected options in a <select> list
+
+function getSelected (select) {
+	list = [];
+	select.children("option[@selected]").each(function() {
+		list.push($(this).val());
+	});
+	return list;
+}
+
+function printSelected () {
+	var artists = getSelected($("#artist_list"));
+	var albums = getSelected($("#album_list"));
+	alert("Artists: " + artists + "\n" + "Albums: " + albums);
+}
+
+///////////////////////////////////////
+// Audio playback functions
 
 var currently_playing = null;
 
@@ -107,6 +129,9 @@ function prev() {
 		$("tr#" + current_id).click();
 }
 
+///////////////////////////////////////
+// Functions which load artist/album/track data via AJAJ
+
 function loadArtists () {
 	$.getJSON("artists.json", function(json) {
 		var artist_list = $("#artist_list");
@@ -148,19 +173,7 @@ function loadTracks () {
 	});
 }
 
-function getSelected (select) {
-	list = [];
-	select.children("option[@selected]").each(function() {
-		list.push($(this).val());
-	});
-	return list;
-}
-
-function printSelected () {
-	var artists = getSelected($("#artist_list"));
-	var albums = getSelected($("#album_list"));
-	alert("Artists: " + artists + "\n" + "Albums: " + albums);
-}
+///////////////////////////////////////
 
 $(document).ready(function() {
 	$("h1#title").fadeIn("slow"); // unnecessary bling :)
