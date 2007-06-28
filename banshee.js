@@ -88,6 +88,9 @@ function formatTime(ms) {
 var currently_playing = null;
 
 function play(id, href) {
+	if (id == currently_playing)
+		return;
+	
 	stop ();
 	
 	soundManager.createSound ({
@@ -111,8 +114,9 @@ function play(id, href) {
 		+ $("td#album" + id, row).html()
 		+ ")";
 		
-	$("#now_playing").empty().append(output).fadeIn();
+	$("#now_playing").empty().append(output);
 	row.addClass("nowplaying");
+	$("#nowplaying_label").fadeIn();
 
 	soundManager.play (currently_playing);
 }
