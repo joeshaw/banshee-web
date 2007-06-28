@@ -60,7 +60,7 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
-	$("td.playing", row).empty().append("playing");
+	$("td.playing", row).empty().append("<img alt=\"\" width=\"16\" height=\"16\" src=\"images/nowplaying.png\">");
 
 	soundManager.play (currently_playing);
 }

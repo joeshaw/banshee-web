@@ -143,3 +143,9 @@ a:hover {
 #player_controls {
 	margin: 1em;
 }
+
+td.playing {
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+}
