@@ -1,6 +1,6 @@
 // Functions for populating <select> and <table> tags
 
-function populateSelect (select, array) {
+function populateSelect (select, array, all_str) {
 	select.empty();
 	select.unbind("change");
 	
@@ -8,6 +8,8 @@ function populateSelect (select, array) {
 		var entry = '<option value="' + array[i] + '">' + array[i] + '</option>';
 		select.append(entry);
 	}
+	
+	select.prepend('<option value="_all">' + all_str + ' (' + i + ')</option>');
 	
 	// For some reason, adding items interactively causes them to
 	// display as though they were selected.  Reset them with this.
@@ -173,7 +175,7 @@ function loadArtists () {
 	$.getJSON("artists.json", function(json) {
 		var artist_list = $("#artist_list");
 		
-		count = populateSelect(artist_list, json);
+		populateSelect(artist_list, json, "All Artists");
 		
 		artist_list.change(function() {
 			loadAlbums();
@@ -185,7 +187,7 @@ function loadAlbums () {
 	artists = getSelected($("#artist_list"));
 	
 	$.getJSON("albums.json", {"artists" : artists}, function(json) {
-		populateSelect($("#album_list"), json);
+		populateSelect($("#album_list"), json, "All Albums");
 		
 		$("#album_list").change(function() {
 			loadTracks();
