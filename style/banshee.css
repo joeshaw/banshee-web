@@ -159,7 +159,7 @@ tr.nowplaying td.playing {
 }
 
 tr.paused td.playing {
-	background: url('../images/nowplaying.png') no-repeat center;
+	background: url('../images/paused.png') no-repeat center;
 }
 
 #nowplaying_label {
