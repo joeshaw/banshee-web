@@ -115,6 +115,8 @@ function play(id, href) {
 	currently_playing = id;
 	
 	var row = $("tr#" + id);
+	row.addClass("nowplaying");
+	
 	var output = "Now playing: "
 		+ $("td#name" + id, row).html()
 		+ " ("
@@ -124,8 +126,8 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
-	row.addClass("nowplaying");
 	$("#nowplaying_label").fadeIn();
+
 	$("#play_button").addClass("pause");
 
 	soundManager.play (currently_playing);
@@ -158,12 +160,18 @@ function pause() {
 }
 
 function next() {
+	if (currently_playing == null)
+		return;
+	
 	var current_id = currently_playing;
 	stop();
 	$("tr#" + current_id).next().click();
 }
 
 function prev() {
+	if (currently_playing == null)
+		return;
+	
 	var current_id = currently_playing;
 	var pos = soundManager.sounds[currently_playing].position;
 	
