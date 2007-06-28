@@ -112,6 +112,7 @@ function play(id, href) {
 		+ ")";
 		
 	$("#now_playing").empty().append(output);
+	$("#now_playing").fadeIn();
 	$(row).addClass("nowplaying");
 
 	soundManager.play (currently_playing);
