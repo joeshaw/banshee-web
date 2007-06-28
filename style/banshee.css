@@ -136,15 +136,20 @@ a:hover {
 	background-color: #ddd;
 }
 
-/* track# column */
-#track_table td:first-child, #track_table th:first-child {
-	width: 2em; /* most albums don'tcontainmore than 99 songs, right? */
-}
-
 .headerSortUp {
 	background: url('../images/arrowdown.png') top right no-repeat;
 }
 
 .headerSortDown {
 	background: url('../images/arrowup.png') top right no-repeat;
+}
+
+#player_controls {
+	margin: 1em;
+}
+
+td.playing {
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
 }
