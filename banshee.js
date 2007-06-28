@@ -89,6 +89,13 @@ function formatTime(ms) {
 
 var currently_playing = null;
 
+function playOrPause() {
+	if (currently_playing != null)
+		return pause();
+
+	$("#track_table tbody tr:first").click();
+}
+
 function play(id, href) {
 	if (id == currently_playing)
 		return;
@@ -119,6 +126,7 @@ function play(id, href) {
 	$("#now_playing").empty().append(output);
 	row.addClass("nowplaying");
 	$("#nowplaying_label").fadeIn();
+	$("#play_button").addClass("pause");
 
 	soundManager.play (currently_playing);
 }
@@ -129,6 +137,7 @@ function stop() {
 		$("tr#" + currently_playing).removeClass("nowplaying").removeClass("paused");;
 		$("#now_playing").empty();
 		$("#current_time").empty();
+		$("#play_button").removeClass("pause");
 		currently_playing = null;
 	}
 }
@@ -141,10 +150,10 @@ function pause() {
 	
 	if (soundManager.sounds[currently_playing].paused) {
 		$("tr#" + currently_playing).removeClass("nowplaying").addClass("paused");
-		$("#pause_button").addClass("play");
+		$("#play_button").removeClass("pause");
 	} else {
 		$("tr#" + currently_playing).removeClass("paused").addClass("nowplaying");
-		$("#pause_button").removeClass("play");
+		$("#play_button").addClass("pause");
 	}
 }
 

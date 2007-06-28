@@ -186,14 +186,14 @@ tr.paused td.playing {
 	background: url('../images/next.png') no-repeat center;
 }
 
-#pause_button {
-	background: url('../images/pause.png') no-repeat center;
+#play_button {
+	background: url('../images/play.png') no-repeat center;
 }
 
 #stop_button {
 	background: url('../images/stop.png') no-repeat center;
 }
 
-.play { /* override the pause button to showplay, when paused */
-	background: url('../images/play.png') no-repeat center !important;
+.pause { /* override the play button to show pause, when paused */
+	background: url('../images/pause.png') no-repeat center !important;
 }
