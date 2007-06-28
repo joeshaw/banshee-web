@@ -163,5 +163,6 @@ tr.paused td.playing {
 }
 
 #nowplaying_label {
-	height: 1em; /* make sure it doesn't need to reflow when it gets content */
+	height: 1.5em; /* make sure it doesn't need to reflow when it gets content */
+	margin: .5em;
 }
