@@ -2,7 +2,7 @@
 
 body {
 	background-color: #eee;
-	font-family: Myriad, "Myriad Pro", Segoe, Sans-Serif;
+	font-family: Candarra, Sans-Serif;
 }
 
 h1,h2,h3 {
@@ -56,6 +56,8 @@ a:hover {
 }
 
 #browser {
+	margin: 0px;
+	padding: 0px;
 	position: relative;
 	min-height: 11em;
 }
@@ -163,15 +165,15 @@ tr.paused td.playing {
 	padding: 0px;
 	position: relative;
 	width: 100%;
-	height: 3em;
+	height: 4em;
 	margin-left: 4px;
 }
 
 #nowplaying_label {
 	position: absolute;
-	top: 0px;
+	top: 4px;
 	right: 0px;
-	width: 50em;
+	width: 80%;
 	padding: .5em;
 	clear: both;
 	background-color: #e8e8e8;
@@ -195,7 +197,7 @@ tr.paused td.playing {
 
 #player_controls {
 	position: absolute;
-	width: 10em;
+	width: 20%;
 	height: 32px;
 	top: 0px;
 	left: 0px;
@@ -203,18 +205,18 @@ tr.paused td.playing {
 
 #player_controls a {
 	display: block;
-	width: 24px;
-	height: 24px;
+	width: 32px;
+	height: 32px;
 	float: left;
 	margin: 4px;
 	text-indent: -100em;
 	opacity: .8;
+	-moz-border-radius: 5px;
 }
 
 #player_controls a:hover {
 	opacity: 1;
-	margin: 2px;
-	border: 2px solid #ddd;
+	background-color: #ddd;
 }
 
 #prev_button {
@@ -237,10 +239,20 @@ tr.paused td.playing {
 	background: url('../images/pause.png') no-repeat center !important;
 }
 
+.pause:hover {
+	background-color: #ddd !important;
+}
+
 #debug_button {
 	position: absolute;
 	top: 0px;
 	right: 0px;
 	font-size: 50%;
 	opacity: .4;
+}
+
+#copy {
+	bottom: 0px;
+	font-size: 70%;
+	color: #aaa;
 }
