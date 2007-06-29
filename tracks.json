@@ -1,2 +1,73 @@
-[ { "id" : "1", "number" : "2", "name": "Dashboard", "length": "4:14", "artist" : "Modest Mouse", "album": "We Were Dead Before the Ship Even Sank", "href":"http://joeshaw.org/mysong.mp3"}, {"id": "2", "number": "4", "name": "Florida", "length": "3:32", "artist":"Modest Mouse", "album":"We Were Dead Before the Ship Even Sank", "href":"http://joeshaw.org/mysong.mp3"}, {"id":"3", "number": "3", "name": "Parchment Moon", "length": "3:58", "artist":"Neil Young", "album":"Parchment Moon", "href":"http://joeshaw.org/mysong.mp3"}, {"id":"4", "number":"4", "name":"Ohio", length:"2:49", artist:"Neil Young", "album":"Crosby, Stills, Nash and Young", "href":"http://joeshaw.org/mysong.mp3"}, {"id":"5", "number":"9", "name":"Alphabetical Sort", "length":"0:30", "artist":"Alphabet", "album":"Zeta Zeta", "href":"http://joeshaw.org/mysong.mp3"}]
-
+[{ 
+	"id": "1", 
+	"number": "1",
+	"name": "Carry the Zero",
+	"length": "5:43",
+	"artist": "Built to Spill",
+	"album": "Keep It Like a Secret",
+	"href": "music/Carry the Zero.mp3"
+},
+{
+	"id": "2",
+	"number": "6",
+	"name": "The Skin of My Yellow Country Teeth",
+	"length": "5:43",
+	"artist": "Clap Your Hands Say Yeah",
+	"album": "Clap Your Hands Say Yeah",
+	"href": "music/cyhsy.mp3"
+},
+{
+	"id": "3",
+	"number": "1",
+	"name": "My Song",
+	"length": "0:10",
+	"artist": "Joe Shaw",
+	"album": "My Music",
+	"href": "http://joeshaw.org/mysong.mp3"
+},
+{
+	"id": "4",
+	"number": "1",
+	"name": "Don't Stop Belevin'",
+	"length": "4:09",
+	"artist": "Journey",
+	"album": "Escape",
+	"href": "music/journey.mp3"
+},
+{
+	"id" : "5",
+	"number": "4",
+	"name": "Dashboard",
+	"length": "4:07",
+	"artist": "Modest Mouse",
+	"album": "We Were Dead Before the Ship Even Sank",
+	"href": "music/dashboard.mp3"
+},
+{
+	"id": "6",
+	"number": "3",
+	"name": "Float On",
+	"length": "3:29",
+	"artist": "Modest Mouse",
+	"album": "Good News For People Who Love Bad News",
+	"href": "music/floaton.mp3"
+},
+{ 
+	"id": "7",
+	"number": "8",
+	"name": "(Antichrist Television Blues)",
+	"length": "5:10",
+	"artist": "Arcade Fire",
+	"album": "Neon Bible",
+	"href": "music/arcadefire.mp3"
+},
+{
+	"id": "8",
+	"number": "5",
+	"name": "Psycho Killer",
+	"length": "4:20",
+	"artist": "Talking Heads",
+	"album": "The Name of This Band Is Talking Heads",
+	"href": "music/psychokiller.mp3"
+}
+]
