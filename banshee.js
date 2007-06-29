@@ -236,6 +236,7 @@ function loadTracks () {
 			stripingRowClass: ["evenrow", "oddrow"],
 			stripeRowsOnStartup: "true"
 		});
+	  $("#table_container").show();
 		$("#table_container").fadeIn("slow");
 	});
 }
