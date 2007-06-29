@@ -18,6 +18,8 @@ function populateSelect (select, array, all_str) {
 	return i;
 }
 
+var tablesorter = null;
+
 function populateTable (table, array) {
 	tbody = $("tbody", table);
 	tbody.empty();
@@ -37,6 +39,20 @@ function populateTable (table, array) {
 			+ generateTableItem (array, i, "album")
 			+ "</tr>";
 		tbody.append(entry);
+	}
+	
+	if (tablesorter == null) {
+		tablesorter = $("#track_table").tableSorter({
+			sortColumn: "Artist",
+			sortClassAsc: "headerSortUp",
+			sortClassDesc: "headerSortDown",
+			headerClass: "header",
+			stripingRowClass: ["evenrow", "oddrow"],
+			stripeRowsOnStartup: "true",
+			bind: "resort"
+		});
+	} else {
+		tablesorter.trigger("resort");
 	}
 }
 
@@ -229,15 +245,8 @@ function loadTracks () {
 	
 	$.getJSON("tracks.json", {"albums" : albums}, function(json) {
 		populateTable($("#track_table"), json);
-		$("#track_table").tableSorter({
-			sortColumn: "Artist",
-			sortClassAsc: "headerSortUp",
-			sortClassDesc: "headerSortDown",
-			headerClass: "header",
-			stripingRowClass: ["evenrow", "oddrow"],
-			stripeRowsOnStartup: "true"
-		});
-	  $("#table_container").show();
+		
+		$("#table_container").show();
 		$("#table_container").fadeIn("slow");
 	});
 }
