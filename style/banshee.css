@@ -162,8 +162,8 @@ tr.paused td.playing {
 }
 
 #dashboard {
-	padding: 0px;
 	position: relative;
+	padding: 0px;
 	width: 100%;
 	height: 5em;
 	margin-left: 4px;
@@ -173,36 +173,26 @@ tr.paused td.playing {
 	position: absolute;
 	top: 4px;
 	right: 0px;
-	width: 72%;
+	width: 75%;
 	padding: .5em;
 	clear: both;
 	background-color: #e8e8e8;
 	-moz-border-radius: 4px;
-}
-
-#nowplaying_label>span {
 	font-family: monospace;
-}
-
-#nowplaying_label>span>span:first-child {
-	font-family: Myriad, "Myriad Pro", Segoe, Sans-Serif;
 	font-size: 90%;
-	padding-right: 1em;
 }
-
 
 #current_time {
 	font-weight: bold;
 	font-family: Monospace;
 	font-size: 80%;
 	margin-top: 1em;
-	margin-left: 8em;
 	color: #888;
 }
 
 #player_controls {
 	position: absolute;
-	width: 22%;
+	width: 160px;
 	height: 38px;
 	top: 0px;
 	left: 0px;

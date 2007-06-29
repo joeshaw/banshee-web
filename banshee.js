@@ -119,7 +119,7 @@ function play(id, href) {
 	var row = $("tr#" + id);
 	row.addClass("nowplaying");
 	
-	var output = "<span>Now playing:</span> <span>"
+	var output = "<span>"
 		+ $("td#name" + id, row).html()
 		+ " ("
 		+ $("td#artist" + id, row).html()
