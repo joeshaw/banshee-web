@@ -57,7 +57,7 @@ a:hover {
 
 #browser {
 	position: relative;
-	min-height: 200px;
+	min-height: 11em;
 }
 
 #artists_container {
@@ -92,7 +92,7 @@ a:hover {
 
 #table_container {
 	width: 100%;
-	margin-top: 1em;
+	margin: 1em 2px 1em 4px;
 }
 
 #track_table {
@@ -159,14 +159,46 @@ tr.paused td.playing {
 	background: url('../images/paused.png') no-repeat center;
 }
 
+#dashboard {
+	padding: 0px;
+	position: relative;
+	width: 100%;
+	height: 3em;
+	margin-left: 4px;
+}
+
 #nowplaying_label {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 50em;
+	padding: .5em;
 	clear: both;
-	height: 1.5em; /* make sure it doesn't need to reflow when it gets content */
-	margin-top: 1em;
+	background-color: #e8e8e8;
+	-moz-border-radius: 4px;
+}
+
+#nowplaying_label span:first-child {
+	font-family: Myriad, "Myriad Pro", Segoe, Sans-Serif;
+	padding-right: 1em;
+}
+#nowplaying_label span {
+	font-family: monospace;
+}
+
+
+#current_time {
+	padding-left: 1em;
+	font-weight: bold;
+	font-family: Monospace;
 }
 
 #player_controls {
+	position: absolute;
+	width: 10em;
 	height: 32px;
+	top: 0px;
+	left: 0px;
 }
 
 #player_controls a {
@@ -176,6 +208,13 @@ tr.paused td.playing {
 	float: left;
 	margin: 4px;
 	text-indent: -100em;
+	opacity: .8;
+}
+
+#player_controls a:hover {
+	opacity: 1;
+	margin: 2px;
+	border: 2px solid #ddd;
 }
 
 #prev_button {
@@ -196,4 +235,12 @@ tr.paused td.playing {
 
 .pause { /* override the play button to show pause, when paused */
 	background: url('../images/pause.png') no-repeat center !important;
+}
+
+#debug_button {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 50%;
+	opacity: .4;
 }

@@ -119,16 +119,15 @@ function play(id, href) {
 	var row = $("tr#" + id);
 	row.addClass("nowplaying");
 	
-	var output = "Now playing: "
+	var output = "<span>Now playing:</span> <span>"
 		+ $("td#name" + id, row).html()
 		+ " ("
 		+ $("td#artist" + id, row).html()
 		+ " - "
 		+ $("td#album" + id, row).html()
-		+ ")";
+		+ ")</span>";
 		
 	$("#now_playing").empty().append(output);
-	$("#nowplaying_label").fadeIn();
 
 	$("#play_button").addClass("pause");
 

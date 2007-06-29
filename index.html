@@ -22,6 +22,20 @@
 			</ul>
 		</div>
 
+		<div id="dashboard">
+			<div id="nowplaying_label">
+				<span id="now_playing">&nbsp;</span>
+				<span id="current_time">&nbsp;</span>
+			</div>
+
+			<div id="player_controls">
+				<a id="prev_button" onclick="prev();">Prev</a>
+				<a id="play_button" onclick="playOrPause();">Play</a>
+				<a id="stop_button" onclick="stop();">Stop</a>
+				<a id="next_button" onclick="next();">Next</a>
+			</div>
+		</div>
+
 		<div id="browser">
 			<div id="artists_container">
 				<h2>Artists</h2>
@@ -36,20 +50,10 @@
 			</div>
 		</div>
 
-		<div>
+		<div id="debug_button">
 			<a id="show_artist" onclick="printSelected();">Show the current selections</a>
 		</div>
-		<div id="player_controls">
-			<a id="prev_button" onclick="prev();">Prev</a>
-			<a id="play_button" onclick="playOrPause();">Play</a>
-			<a id="stop_button" onclick="stop();">Stop</a>
-			<a id="next_button" onclick="next();">Next</a>
-		</div>
-		<div id="nowplaying_label">
-			<span id="now_playing">&nbsp;</span>
-			<span id="current_time">&nbsp;</span>
-		</div>
-		<div id="table_container">
+			<div id="table_container">
 			<table id="track_table">
 				<thead>
 					<tr>
