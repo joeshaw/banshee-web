@@ -165,7 +165,7 @@ tr.paused td.playing {
 	padding: 0px;
 	position: relative;
 	width: 100%;
-	height: 4em;
+	height: 5em;
 	margin-left: 4px;
 }
 
@@ -173,34 +173,40 @@ tr.paused td.playing {
 	position: absolute;
 	top: 4px;
 	right: 0px;
-	width: 80%;
+	width: 72%;
 	padding: .5em;
 	clear: both;
 	background-color: #e8e8e8;
 	-moz-border-radius: 4px;
 }
 
-#nowplaying_label span:first-child {
-	font-family: Myriad, "Myriad Pro", Segoe, Sans-Serif;
-	padding-right: 1em;
-}
-#nowplaying_label span {
+#nowplaying_label>span {
 	font-family: monospace;
+}
+
+#nowplaying_label>span>span:first-child {
+	font-family: Myriad, "Myriad Pro", Segoe, Sans-Serif;
+	font-size: 90%;
+	padding-right: 1em;
 }
 
 
 #current_time {
-	padding-left: 1em;
 	font-weight: bold;
 	font-family: Monospace;
+	font-size: 80%;
+	margin-top: 1em;
+	margin-left: 8em;
+	color: #888;
 }
 
 #player_controls {
 	position: absolute;
-	width: 20%;
-	height: 32px;
+	width: 22%;
+	height: 38px;
 	top: 0px;
 	left: 0px;
+	white-space: nowrap;
 }
 
 #player_controls a {
